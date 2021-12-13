@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12">   
+          <ion-item>
+            <ion-label position="floating">Email <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input formControlName="email" type="text" [class.is-invalid]="emailNotValid" required></ion-input>
+          </ion-item>
+          <small [ngClass]="emailNotValid === true ? 'emailError--visible' : 'emailError--hidden'">Debe ingresar un correo válido</small>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item>
+            <ion-label position="floating">Password <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input formControlName="password" type="password" required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button class="mt-2" expand="block" color="primary" type="submit" [disabled]="loginForm.invalid">
+            Iniciar Sesion
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+  <small>No tienes cuenta? <ion-button (click)="abrirModal()">Registate acá</ion-button></small>
+</ion-content>
