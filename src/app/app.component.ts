@@ -14,9 +14,15 @@ import { AuthenticationService } from './services/authentication.service';
 export class AppComponent implements OnInit {
   componentes: Componente[] = [
     {
-      icon: 'logo-bitcoin',
-      name: 'Home',
+      icon: 'man-outline',
+      name: 'Inicio',
       redirecTo: '/home'
+    },
+
+    {
+      icon: 'add-circle-outline',
+      name: 'Agregar Auto',
+      redirecTo: '/suscripcion'
     },
     
   ];
